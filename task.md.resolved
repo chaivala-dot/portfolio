@@ -1,0 +1,29 @@
+# Portfolio Development Task Breakdown
+
+## 1. Planning and Design System
+- [ ] Define the core brand identity (colors, typography, vibe).
+- [ ] Establish the tech stack (Next.js, Framer Motion, GSAP).
+- [ ] Outline the site architecture (Home, About, Work/Case Studies, Contact).
+
+## 2. Foundation Setup
+- [x] Initialize the Next.js project.
+- [x] Configure global styles and CSS variables for the color palette.
+- [x] Set up layout components (Navbar, Footer, Custom Cursor).
+
+## 3. Core Components (The "Vibe")
+- [x] Implement smooth scrolling (e.g., Lenis).
+- [x] Create reusable animated text components (reveal on scroll).
+- [x] Build a dynamic, interactive hero section.
+
+## 4. Page Implementation
+- [x] **Home Page:** Hero, Featured Work showcase with hover effects, brief About snippet.
+- [ ] **Work/Projects Page:** Grid or list of case studies with filtering.
+- [ ] **Case Study Template:** Deep dive layout with rich media support, sticky navigation.
+- [ ] **About Page:** Personal story, experience timeline, skills, interactive resume.
+- [ ] **Contact Page:** Form, social links.
+
+## 5. Polish and Optimization
+- [ ] Refine micro-interactions (button hovers, link underlines, custom cursor states).
+- [ ] Optimize images and videos for performance.
+- [ ] Ensure responsive design across all devices (mobile, tablet, desktop).
+- [ ] Accessibility pass (ARIA labels, contrast, keyboard navigation).
