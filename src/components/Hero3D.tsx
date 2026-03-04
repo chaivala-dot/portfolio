@@ -33,8 +33,11 @@ function OrbitalBody({
 }) {
     const ref = useRef<THREE.Mesh>(null!);
 
-    useFrame(({ clock }) => {
-        const t = clock.elapsedTime * angularSpeed + phase;
+    const elapsed = useRef(0);
+
+    useFrame((_, delta) => {
+        elapsed.current += delta;
+        const t = elapsed.current * angularSpeed + phase;
         // Orbital position: ellipse in the inclined plane
         ref.current.position.x = Math.cos(t) * radius;
         ref.current.position.y = Math.sin(t) * radius * 0.55 * Math.cos(inclination);
@@ -65,9 +68,11 @@ function OrbitalBody({
 /* ── Orbital plane ring ── */
 function OrbitalRing({ radius, inclination, color }: { radius: number; inclination: number; color: string }) {
     const ref = useRef<THREE.Mesh>(null!);
-    useFrame(({ clock }) => {
-        ref.current.rotation.x = inclination + Math.sin(clock.elapsedTime * 0.1) * 0.05;
-        ref.current.rotation.y = clock.elapsedTime * 0.05;
+    const elapsed = useRef(0);
+    useFrame((_, delta) => {
+        elapsed.current += delta;
+        ref.current.rotation.x = inclination + Math.sin(elapsed.current * 0.1) * 0.05;
+        ref.current.rotation.y = elapsed.current * 0.05;
     });
     return (
         <mesh ref={ref}>
@@ -96,10 +101,12 @@ function PressurizedSpace({ count = 200, color }: { count?: number; color: strin
         return { positions, sizes };
     }, [count]);
 
-    useFrame(({ clock }) => {
+    const elapsed = useRef(0);
+    useFrame((_, delta) => {
+        elapsed.current += delta;
         if (ref.current) {
-            ref.current.rotation.y = clock.elapsedTime * 0.025;
-            ref.current.rotation.x = Math.sin(clock.elapsedTime * 0.015) * 0.08;
+            ref.current.rotation.y = elapsed.current * 0.025;
+            ref.current.rotation.x = Math.sin(elapsed.current * 0.015) * 0.08;
         }
     });
 
@@ -123,8 +130,10 @@ function PressurizedSpace({ count = 200, color }: { count?: number; color: strin
 /* ── Central mass — the attractor (barely visible, structurally important) ── */
 function CentralMass({ color }: { color: string }) {
     const ref = useRef<THREE.Mesh>(null!);
-    useFrame(({ clock }) => {
-        const s = 1 + Math.sin(clock.elapsedTime * 0.7) * 0.04;
+    const elapsed = useRef(0);
+    useFrame((_, delta) => {
+        elapsed.current += delta;
+        const s = 1 + Math.sin(elapsed.current * 0.7) * 0.04;
         ref.current.scale.setScalar(s);
     });
     return (
