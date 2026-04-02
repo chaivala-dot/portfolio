@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mithapara Mayank — Full Stack Developer</title>
+  <meta name="description" content="Full Stack Developer from Gujarat, India. Flutter, React, Node.js, and everything in between.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat:wght@700&family=Outfit:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-in">
+      <span class="nav-mark">M.</span>
+      <div class="nav-links">
+        <a href="#work">work</a>
+        <a href="#experience">experience</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════
+       HERO — Cream desk, real scattered photos
+       mix-blend-mode: multiply = white bg disappears
+  ════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <!-- Scattered real photos — TRUE transparent PNGs -->
+    <div class="scatter" aria-hidden="true">
+
+      <div class="simg s-vinyl" data-title="Current Rotation">
+        <img src="protfolio-img/download (12)-Photoroom.png" alt="vinyl records" draggable="false">
+      </div>
+      <div class="simg s-cats" data-title="Chaos Agents">
+        <img src="protfolio-img/download (1)-Photoroom.png" alt="my cats" draggable="false">
+      </div>
+      <div class="simg s-watch" data-title="Time Check">
+        <img src="protfolio-img/download (2)-Photoroom.png" alt="casio watch" draggable="false">
+      </div>
+      <div class="simg s-phones" data-title="Deep Work Mode">
+        <img src="protfolio-img/download (4)-Photoroom.png" alt="headphones" draggable="false">
+      </div>
+      <div class="simg s-martens" data-title="Daily Drivers">
+        <img src="protfolio-img/download (8)-Photoroom.png" alt="dr martens" draggable="false">
+      </div>
+      <div class="simg s-cam" data-title="Memory Capture">
+        <img src="protfolio-img/download (11)-Photoroom.png" alt="camcorder" draggable="false">
+      </div>
+      <div class="simg s-books" data-title="Always Learning">
+        <img src="protfolio-img/download (9)-Photoroom.png" alt="books" draggable="false">
+      </div>
+      <div class="simg s-brushes" data-title="Creative Outlet">
+        <img src="protfolio-img/download (10)-Photoroom.png" alt="paint brushes" draggable="false">
+      </div>
+      <div class="simg s-lambo" data-title="Dream Machine">
+        <img src="protfolio-img/download (3)-Photoroom.png" alt="lamborghini" draggable="false">
+      </div>
+      <div class="simg s-jeans" data-title="Uniform Baseline">
+        <img src="protfolio-img/download (6)-Photoroom.png" alt="levi jeans" draggable="false">
+      </div>
+      <div class="simg s-shirt" data-title="Linen Season">
+        <img src="protfolio-img/download (7)-Photoroom.png" alt="shirt" draggable="false">
+      </div>
+      <div class="simg s-tote" data-title="Everyday Carry">
+        <img src="protfolio-img/download (5)-Photoroom.png" alt="tote bag" draggable="false">
+      </div>
+
+    </div>
+
+    <!-- Text floats directly on cream surface — no card container -->
+    <div class="hero-text">
+      <div class="hero-meta-row">
+        <span class="mono">Gujarat, India</span>
+        <span class="mono live-time" id="liveTime"></span>
+      </div>
+
+      <h1 class="hero-name">Mayank</h1>
+      <span class="hero-role">full stack developer</span>
+
+      <p class="hero-tagline">
+        Code should<br><em>feel human.</em>
+      </p>
+
+      <ul class="hero-ethos">
+        <li>build with intent</li>
+        <li>design for people</li>
+        <li>ship with care</li>
+      </ul>
+
+      <div class="hero-status">
+        <div class="status-dot"></div>
+        <span class="mono">available for work</span>
+      </div>
+    </div>
+
+    <!-- Toggle buttons (Clean / Chaos) -->
+    <div class="desk-toggles">
+      <button class="tgl-btn active" id="btnChaos">Messy</button>
+      <button class="tgl-btn" id="btnClean">Clean</button>
+    </div>
+
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="ti">build with intent</span><span class="ts">·</span>
+      <span class="ti">design for people</span><span class="ts">·</span>
+      <span class="ti">think before you type</span><span class="ts">·</span>
+      <span class="ti">ship with care</span><span class="ts">·</span>
+      <span class="ti">solve real problems</span><span class="ts">·</span>
+      <span class="ti">code with clarity</span><span class="ts">·</span>
+      <span class="ti">make it real</span><span class="ts">·</span>
+      <!-- duplicate for seamless -->
+      <span class="ti">build with intent</span><span class="ts">·</span>
+      <span class="ti">design for people</span><span class="ts">·</span>
+      <span class="ti">think before you type</span><span class="ts">·</span>
+      <span class="ti">ship with care</span><span class="ts">·</span>
+      <span class="ti">solve real problems</span><span class="ts">·</span>
+      <span class="ti">code with clarity</span><span class="ts">·</span>
+      <span class="ti">make it real</span><span class="ts">·</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+       WORK — Editorial list, no cards
+  ════════════════════════════ -->
+  <section class="section s-light" id="work">
+    <div class="section-in">
+
+      <header class="section-head reveal">
+        <span class="eyebrow mono">01 / Selected Work</span>
+        <h2 class="section-title">Things I've built</h2>
+      </header>
+
+      <div class="proj-list">
+
+        <article class="proj reveal" data-delay="0">
+          <div class="proj-left">
+            <span class="proj-index mono">01</span>
+            <span class="proj-type mono">Full Stack · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">CertifyPro</h3>
+            <p class="proj-sub mono">Certificate Generator</p>
+            <p class="proj-desc">Full-stack application to generate and manage professional certificates with customizable templates. Architecture built with modern TypeScript.</p>
+            <div class="proj-stack mono">TypeScript &nbsp;/&nbsp; Node.js</div>
+            <button class="proj-cta mono open-case" data-id="certifypro" data-github="https://github.com/chaivala-dot/CertifyPro">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="60">
+          <div class="proj-left">
+            <span class="proj-index mono">02</span>
+            <span class="proj-type mono">Web App · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">Ai-bridge</h3>
+            <p class="proj-sub mono">AI Integration Platform</p>
+            <p class="proj-desc">A seamless bridge to integrate AI models and capabilities into existing workflows. Built with JavaScript for high responsiveness and easy ecosystem integration.</p>
+            <div class="proj-stack mono">JavaScript &nbsp;/&nbsp; AI APIs</div>
+            <button class="proj-cta mono open-case" data-id="aibridge" data-github="https://github.com/chaivala-dot/Ai-bridge">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="120">
+          <div class="proj-left">
+            <span class="proj-index mono">03</span>
+            <span class="proj-type mono">Web App · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">DareCoins</h3>
+            <p class="proj-sub mono">Gamified Economy</p>
+            <p class="proj-desc">A fun interactive website where users can challenge each other with dares and earn DareCoins. Real-time interactivity designed for engagement.</p>
+            <div class="proj-stack mono">JavaScript &nbsp;/&nbsp; Frameworks</div>
+            <button class="proj-cta mono open-case" data-id="darecoins" data-github="https://github.com/chaivala-dot/DareCoins-V-0.1">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="180">
+          <div class="proj-left">
+            <span class="proj-index mono">04</span>
+            <span class="proj-type mono">Mobile App · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">EventSphere</h3>
+            <p class="proj-sub mono">Event Discovery App</p>
+            <p class="proj-desc">A modern mobile application for discovering and managing events globally. Built with Dart and Flutter for a native-feeling cross-platform experience.</p>
+            <div class="proj-stack mono">Flutter &nbsp;/&nbsp; Dart</div>
+            <button class="proj-cta mono open-case" data-id="eventsphere" data-github="https://github.com/chaivala-dot/EventSphere-App">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="240">
+          <div class="proj-left">
+            <span class="proj-index mono">05</span>
+            <span class="proj-type mono">Web Platform · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">Course Marketplace</h3>
+            <p class="proj-sub mono">Educational Hub</p>
+            <p class="proj-desc">An online marketplace for buying and selling educational courses. Features a clean, accessible UI and structured content architecture.</p>
+            <div class="proj-stack mono">HTML &nbsp;/&nbsp; CSS &nbsp;/&nbsp; JavaScript</div>
+            <button class="proj-cta mono open-case" data-id="coursemarketplace" data-github="https://github.com/chaivala-dot/course-marketplace">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="300">
+          <div class="proj-left">
+            <span class="proj-index mono">06</span>
+            <span class="proj-type mono">Web · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">Portfolio Setup</h3>
+            <p class="proj-sub mono">Creative Directory</p>
+            <p class="proj-desc">The foundation for a highly interactive, editorial-style personal website to showcase projects, experience, and development ethos.</p>
+            <div class="proj-stack mono">TypeScript &nbsp;/&nbsp; Frontend</div>
+            <button class="proj-cta mono open-case" data-id="portfolio" data-github="https://github.com/chaivala-dot/portfolio">View Case Study →</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       EXPERIENCE
+  ════════════════════════════ -->
+  <section class="section s-dark" id="experience">
+    <div class="section-in">
+
+      <header class="section-head reveal">
+        <span class="eyebrow mono" style="color:rgba(237,234,222,.35)">02 / Experience</span>
+        <h2 class="section-title lt">Where I've learned</h2>
+      </header>
+
+      <div class="exp-list">
+
+        <div class="exp-row reveal" data-delay="0">
+          <div class="exp-when mono">Dec 2025</div>
+          <div class="exp-body">
+            <h4 class="exp-title">Full Stack Web Dev with AI</h4>
+            <p class="exp-org mono">OJT — R.N.G Patel Institute of Technology</p>
+            <p class="exp-desc">Used AI tools across development workflows. Built full-stack applications where AI was core functionality, not just an afterthought.</p>
+            <p class="exp-tags mono">AI Integration / Full Stack Development</p>
+          </div>
+        </div>
+
+        <div class="exp-row reveal" data-delay="60">
+          <div class="exp-when mono">Aug 2025</div>
+          <div class="exp-body">
+            <h4 class="exp-title">Mobile App Development</h4>
+            <p class="exp-org mono">OJT — Flutter</p>
+            <p class="exp-desc">Built cross-platform applications for mobile, web, and desktop from a single Dart codebase. Learned to write truly portable UI.</p>
+            <p class="exp-tags mono">Flutter / Dart / Cross-Platform</p>
+          </div>
+        </div>
+
+        <div class="exp-row reveal" data-delay="120">
+          <div class="exp-when mono">Jan 2025</div>
+          <div class="exp-body">
+            <h4 class="exp-title">Web Dev with Laravel</h4>
+            <p class="exp-org mono">OJT</p>
+            <p class="exp-desc">Built web applications for task automation, API development, and database management using the Laravel framework.</p>
+            <p class="exp-tags mono">Laravel / PHP / REST API</p>
+          </div>
+        </div>
+
+        <div class="exp-row reveal" data-delay="180">
+          <div class="exp-when mono">Aug 2024</div>
+          <div class="exp-body">
+            <h4 class="exp-title">UI/UX Design</h4>
+            <p class="exp-org mono">OJT — Figma &amp; Adobe Illustrator</p>
+            <p class="exp-desc">Designed packaging graphics, web layouts, social posters, and brand identities from scratch.</p>
+            <p class="exp-tags mono">Figma / Illustrator / Brand Design</p>
+          </div>
+        </div>
+
+        <div class="exp-row reveal" data-delay="240">
+          <div class="exp-when mono">Jun 2023</div>
+          <div class="exp-body">
+            <h4 class="exp-title">Database Management</h4>
+            <p class="exp-org mono">OJT — MySQL</p>
+            <p class="exp-desc">Organized, stored, analyzed, and visualized data using structured relational database systems.</p>
+            <p class="exp-tags mono">MySQL / Database Design / SQL</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       SKILLS — Plain text, no pills
+  ════════════════════════════ -->
+  <section class="section s-light" id="skills">
+    <div class="section-in">
+
+      <header class="section-head reveal">
+        <span class="eyebrow mono">03 / Skills &amp; Tools</span>
+        <h2 class="section-title">What I reach for</h2>
+      </header>
+
+      <div class="skill-table">
+        <div class="sk-row reveal" data-delay="0">
+          <span class="sk-label mono">Languages</span>
+          <span class="sk-val">Dart &nbsp;<span class="sk-sep">/</span>&nbsp; JavaScript &nbsp;<span class="sk-sep">/</span>&nbsp; HTML &amp; CSS &nbsp;<span class="sk-sep">/</span>&nbsp; Python &nbsp;<span class="sk-sep">/</span>&nbsp; C / C++ &nbsp;<span class="sk-sep">/</span>&nbsp; Java</span>
+        </div>
+        <div class="sk-row reveal" data-delay="50">
+          <span class="sk-label mono">Frameworks</span>
+          <span class="sk-val">Flutter &nbsp;<span class="sk-sep">/</span>&nbsp; React.js &nbsp;<span class="sk-sep">/</span>&nbsp; Node.js &nbsp;<span class="sk-sep">/</span>&nbsp; Laravel &nbsp;<span class="sk-sep">/</span>&nbsp; Bootstrap</span>
+        </div>
+        <div class="sk-row reveal" data-delay="100">
+          <span class="sk-label mono">Databases</span>
+          <span class="sk-val">MySQL &nbsp;<span class="sk-sep">/</span>&nbsp; MongoDB</span>
+        </div>
+        <div class="sk-row reveal" data-delay="150">
+          <span class="sk-label mono">Tools</span>
+          <span class="sk-val">Git &amp; GitHub &nbsp;<span class="sk-sep">/</span>&nbsp; VS Code &nbsp;<span class="sk-sep">/</span>&nbsp; Figma &nbsp;<span class="sk-sep">/</span>&nbsp; Adobe Illustrator &nbsp;<span class="sk-sep">/</span>&nbsp; Cursor</span>
+        </div>
+        <div class="sk-row reveal" data-delay="200">
+          <span class="sk-label mono">Interests</span>
+          <span class="sk-val">Full Stack Dev &nbsp;<span class="sk-sep">/</span>&nbsp; Mobile Apps &nbsp;<span class="sk-sep">/</span>&nbsp; UI/UX Design &nbsp;<span class="sk-sep">/</span>&nbsp; Version Control</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       ABOUT — Letter format
+  ════════════════════════════ -->
+  <section class="section s-dark" id="about">
+    <div class="section-in">
+
+      <div class="about-layout">
+
+        <aside class="about-aside reveal">
+          <span class="eyebrow mono" style="color:rgba(237,234,222,.35)">04 / About</span>
+          <div class="about-photo-full">
+            <img src="protfolio-img/WhatsApp Image 2026-04-02 at 11.05.22 AM.jpeg" alt="Mithapara Mayank" id="myProfilePhoto" onerror="this.style.display='none'">
+            <div class="apf-placeholder mono">Please place your photo<br>inside <code>protfolio-img/</code><br>and name it <code>profile.jpg</code></div>
+          </div>
+        </aside>
+
+        <div class="about-body reveal" data-delay="100">
+          <h2 class="about-title">A developer who<br><em>gives a damn.</em></h2>
+
+          <p class="about-p">I'm Mayank — a Full Stack Developer from Gujarat, India. I'm in my third year of a B.Voc in Software Development at R.N.G Patel Institute, and across six OJT cycles I've built everything from raw HTML pages to cross-platform Flutter apps and AI-assisted workflows.</p>
+
+          <p class="about-p">I think great software is invisible. It just works, and it feels right. Whether I'm wiring up a backend API, writing Dart for a mobile screen, or nudging spacing in Figma — I try to bring real intentionality to what I make.</p>
+
+          <div class="beliefs">
+            <div class="belief">
+              <span class="b-num mono">01</span>
+              <span class="b-line">Tirelessly pursue clarity.</span>
+            </div>
+            <div class="belief">
+              <span class="b-num mono">02</span>
+              <span class="b-line">Build for real people, real problems.</span>
+            </div>
+            <div class="belief">
+              <span class="b-num mono">03</span>
+              <span class="b-line">Ship it. Then make it better.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       CONTACT
+  ════════════════════════════ -->
+  <section class="section s-light" id="contact">
+    <div class="section-in">
+
+      <div class="contact-wrap reveal">
+        <span class="eyebrow mono">05 / Contact</span>
+        <h2 class="contact-heading">Let's make<br><em>something real.</em></h2>
+        <p class="contact-sub">Open to internships, freelance work, and good conversations about software.</p>
+
+        <a href="mailto:mayank01182006@gmail.com" class="contact-email">
+          <span class="mono ce-label">e-mail</span>
+          <span class="ce-addr">mayank01182006@gmail.com</span>
+          <span class="ce-arrow">→</span>
+        </a>
+
+        <nav class="contact-links">
+          <a href="#" class="mono cl">LinkedIn</a>
+          <a href="https://github.com/chaivala-dot" target="_blank" class="mono cl">GitHub</a>
+          <a href="#" class="mono cl">Resume</a>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       PROJECT OVERLAY
+  ════════════════════════════ -->
+  <div class="overlay" id="projectOverlay" aria-hidden="true">
+    <div class="overlay-bg"></div>
+    <div class="overlay-content">
+      <button class="overlay-close mono" id="btnCloseOverlay">Close ✕</button>
+      
+      <div class="overlay-inner">
+        <!-- Dynamic Header -->
+        <header class="overlay-head">
+          <span class="eyebrow mono" id="ovType">Web App / 2026</span>
+          <h2 class="section-title" id="ovTitle">Project Title</h2>
+          <p class="ov-sub mono" id="ovSub">Project Subtitle</p>
+        </header>
+
+        <!-- Aesthetic CSS Gradient Placeholder -->
+        <div class="ov-hero-img">
+           <div class="ov-abstract-gradient"></div>
+        </div>
+
+        <!-- Detail Body -->
+        <div class="ov-body-grid">
+          
+          <div class="ov-col-main">
+            <h3 class="ov-label mono">What this project does</h3>
+            <div class="ov-text" id="ovDesc">
+              <!-- description injected here -->
+            </div>
+            
+            <a href="#" target="_blank" class="proj-cta mono" id="ovGithub" style="margin-top:2rem">View Source on GitHub →</a>
+          </div>
+
+          <aside class="ov-col-side">
+            <h3 class="ov-label mono">Tech Stack</h3>
+            <div class="ov-stack" id="ovStack">
+              <!-- stack injected here -->
+            </div>
+            
+            <div style="margin-top: 3rem;">
+              <h3 class="ov-label mono">Role</h3>
+              <p class="ov-text mono" style="font-size:0.75rem">Lead Developer / Design</p>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-in">
+      <span class="mono">© 2026 Mithapara Mayank</span>
+      <a href="#" class="mono footer-top">↑ top</a>
+    </div>
+  </footer>
+
+  <script src="oneko.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
