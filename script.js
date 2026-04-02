@@ -418,5 +418,20 @@ if (overlay) {
   });
 }
 
+// ── CUSTOM CURSOR ──────────────────────────────────────────
+const cursorEl = document.getElementById('customCursor');
+if (cursorEl) {
+  // Move cursor
+  document.addEventListener('mousemove', e => {
+    cursorEl.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+  });
+
+  // Hover states
+  document.querySelectorAll('a, button, .cb-group label').forEach(el => {
+    el.addEventListener('mouseenter', () => cursorEl.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursorEl.classList.remove('hover'));
+  });
+}
+
 
 
