@@ -422,44 +422,82 @@
     <div class="overlay-bg"></div>
     <div class="overlay-content">
       <button class="overlay-close mono" id="btnCloseOverlay">Close ✕</button>
-      
+
       <div class="overlay-inner">
-        <!-- Dynamic Header -->
+
+        <!-- Header -->
         <header class="overlay-head">
           <span class="eyebrow mono" id="ovType">Web App / 2026</span>
           <h2 class="section-title" id="ovTitle">Project Title</h2>
           <p class="ov-sub mono" id="ovSub">Project Subtitle</p>
         </header>
 
-        <!-- Aesthetic CSS Gradient Placeholder -->
+        <!-- Hero gradient -->
         <div class="ov-hero-img">
-           <div class="ov-abstract-gradient"></div>
+          <div class="ov-abstract-gradient"></div>
         </div>
 
-        <!-- Detail Body -->
+        <!-- Meta row: role / year / duration / client -->
+        <div class="ov-meta-row" id="ovMeta"></div>
+
+        <!-- Overview -->
+        <section class="ov-section" id="ovOverviewWrap">
+          <h3 class="ov-label mono">Overview</h3>
+          <div class="ov-text" id="ovDesc"></div>
+        </section>
+
+        <!-- Challenge / Solution split -->
+        <section class="ov-section ov-cs-wrap" id="ovCSWrap">
+          <div class="ov-cs-card ov-challenge">
+            <h3 class="ov-label mono">✕ The Challenge</h3>
+            <div class="ov-text" id="ovChallenge"></div>
+          </div>
+          <div class="ov-cs-card ov-solution">
+            <h3 class="ov-label mono">✓ The Solution</h3>
+            <div class="ov-text" id="ovSolution"></div>
+          </div>
+        </section>
+
+        <!-- Key features grid -->
+        <section class="ov-section" id="ovFeaturesWrap">
+          <h3 class="ov-label mono">Key Features</h3>
+          <div class="ov-features-grid" id="ovFeatures"></div>
+        </section>
+
+        <!-- Stack breakdown + Architecture -->
         <div class="ov-body-grid">
-          
           <div class="ov-col-main">
-            <h3 class="ov-label mono">What this project does</h3>
-            <div class="ov-text" id="ovDesc">
-              <!-- description injected here -->
-            </div>
-            
-            <a href="#" target="_blank" class="proj-cta mono" id="ovGithub" style="margin-top:2rem">View Source on GitHub →</a>
+
+            <!-- Architecture steps -->
+            <section class="ov-section" id="ovArchWrap">
+              <h3 class="ov-label mono">Architecture</h3>
+              <div class="ov-arch-list" id="ovArch"></div>
+            </section>
+
+            <!-- Learnings -->
+            <section class="ov-section" id="ovLearnWrap">
+              <h3 class="ov-label mono">Key Learnings</h3>
+              <div class="ov-learn-list" id="ovLearn"></div>
+            </section>
+
+            <!-- Links -->
+            <div class="ov-links" id="ovLinks"></div>
+
           </div>
 
           <aside class="ov-col-side">
-            <h3 class="ov-label mono">Tech Stack</h3>
-            <div class="ov-stack" id="ovStack">
-              <!-- stack injected here -->
-            </div>
-            
-            <div style="margin-top: 3rem;">
-              <h3 class="ov-label mono">Role</h3>
-              <p class="ov-text mono" style="font-size:0.75rem">Lead Developer / Design</p>
-            </div>
-          </aside>
 
+            <!-- Tech stack -->
+            <h3 class="ov-label mono">Tech Stack</h3>
+            <div class="ov-stack" id="ovStack"></div>
+
+            <!-- Metrics -->
+            <section class="ov-section" id="ovMetricsWrap" style="margin-top:2.5rem">
+              <h3 class="ov-label mono">Metrics</h3>
+              <div class="ov-metrics" id="ovMetrics"></div>
+            </section>
+
+          </aside>
         </div>
 
       </div>

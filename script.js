@@ -314,89 +314,255 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ── PROJECT OVERLAY LOGIC ──────────────────────────────────
 const projectData = {
   certifypro: {
-    type: "Full Stack / 2026",
+    type: "Full Stack · 2026",
     title: "CertifyPro",
-    sub: "Certificate Generator",
-    desc: `<p>CertifyPro is a complete full-stack environment built to automate and manage the generation of professional certificates.</p><p>Instead of manually creating certificates for course attendees or event participants, this application provides highly customizable templates which can bulk-generate personalized, print-ready certificates in seconds.</p><p>Built entirely on a modern Node.js and TypeScript architecture to ensure strict typing and robust data handling.</p>`,
-    stack: ["TypeScript", "Node.js", "React", "MongoDB"],
-    gradient: "linear-gradient(120deg, #d8d2c4, #e5e0d4, #b0721940)"
+    sub: "Certificate Generator & Verification Platform",
+    gradient: "linear-gradient(120deg, #0a1628, #0f2d3d, #0a1628)",
+    meta: [
+      { label: "Role",     value: "Full Stack Developer" },
+      { label: "Year",     value: "2026" },
+      { label: "Duration", value: "3 months" },
+      { label: "Client",   value: "Personal / Open Source" },
+    ],
+    overview: `CertifyPro is a full-stack certificate management platform that lets organisations design certificate templates, bulk-generate them from CSV data, and distribute tamper-proof, QR-verified certificates — all from a single web app. It unifies the entire lifecycle: WYSIWYG template design → server-side bulk generation → real-time QR verification → batch tracking dashboard.`,
+    challenge: `Most teams handle certificates through a fragile mix of Figma, spreadsheets, and manual emails. A batch of 500 certificates means 500 manual sends, zero audit trail, and no verification story. There was no single product that unified template design → bulk generation → verification without needing a designer or developer for every run.`,
+    solution: `CertifyPro gives any team a self-service pipeline: a WYSIWYG builder with live DOM preview (no API calls), CSV upload triggering server-side bulk generation with unique QR codes per certificate, real-time verification by scanning any QR code, and a batch tracking dashboard (Pending → Processing → Completed → Failed).`,
+    features: [
+      { icon: "✦", title: "WYSIWYG Template Builder",   desc: "Live DOM preview updates on every keystroke — zero round trips. Configure typography, borders, seal, and signature lines." },
+      { icon: "⚡", title: "CSV Bulk Generation",        desc: "Upload a CSV → server generates every certificate with a unique QR code and verification token. Status polling keeps UX non-blocking." },
+      { icon: "🔒", title: "QR Verification",           desc: "Every certificate carries a tamper-proof QR code. Scanning it hits the public verification endpoint and confirms authenticity in real time." },
+      { icon: "📊", title: "Batch Dashboard",            desc: "Full lifecycle tracking: Pending → Processing → Completed → Failed. Aggregate stats with per-batch drill-down." },
+      { icon: "🔑", title: "Secure Auth",                desc: "JWT httpOnly cookies (7-day expiry) block XSS token theft. Google OAuth as alternative sign-in. sameSite: lax CSRF protection." },
+      { icon: "🗄️", title: "canvasStateJson Schema",    desc: "All template config in one JSON field — decouples the builder from the DB, letting the UI evolve without schema migrations." },
+    ],
+    stack: ["React", "TypeScript", "Vite", "TanStack Router", "Zustand", "Framer Motion", "Radix UI", "Tailwind CSS", "Node.js", "Express", "Prisma", "PostgreSQL", "JWT", "Google OAuth"],
+    architecture: [
+      "The frontend is a Vite + React SPA with type-safe file-based routing via TanStack Router. The template builder renders previews client-side as real DOM — instant updates, no round trips.",
+      "The backend is Node.js + Express. Template data is stored as a canvasStateJson blob — a flexible JSON column covering all design options, avoiding schema migrations as the UI evolves.",
+      "Auth uses JWT httpOnly cookies (7-day expiry) + Google OAuth. Batch generation is queued server-side; the frontend polls every few seconds, keeping the UX non-blocking for large runs.",
+    ],
+    metrics: [
+      { value: "500+", label: "Certs per batch" },
+      { value: "0ms",  label: "Preview latency" },
+      { value: "5",    label: "Prisma DB models" },
+      { value: "7d",   label: "JWT expiry window" },
+    ],
+    learnings: [
+      "A JSON blob schema (canvasStateJson) decouples UI from DB — when design options evolve, you skip migrations. Tradeoff: weaker queryability, but for a builder that reads the full blob anyway, it's a net win.",
+      "Client-side DOM-based preview beats canvas for live editing: CSS applies instantly, text reflows naturally, browser-native font rendering for free.",
+      "Cookie-based auth (httpOnly, sameSite) is materially more secure than localStorage tokens for SPAs — and barely more complex to implement.",
+      "Polling beats WebSockets for low-frequency batch jobs. A 3-second poll interval is imperceptible to users and eliminates the operational complexity of a persistent connection layer.",
+    ],
+    links: {
+      live:   "https://certify-pro-frontend.vercel.app/",
+      github: "https://github.com/chaivala-dot/CertifyPro",
+    },
   },
+
   aibridge: {
-    type: "Web App / 2026",
+    type: "Web App · 2026",
     title: "Ai-bridge",
     sub: "AI Integration Platform",
-    desc: `<p>Ai-bridge serves as the missing link between powerful foundational AI models and every-day productivity tools.</p><p>It is designed to cleanly expose a flexible API and interface that lets developers plug large language model reasoning capabilities directly into their local development environments or custom web apps.</p><p>Responsive, modular, and built natively in JavaScript for high accessibility and fast prototyping.</p>`,
+    gradient: "linear-gradient(120deg, #c4d8ce, #e5e0d4, #19b08b40)",
+    meta: [{ label: "Role", value: "Developer" }, { label: "Year", value: "2026" }],
+    overview: `Ai-bridge serves as the missing link between powerful foundational AI models and every-day productivity tools. It exposes a flexible API and interface that lets developers plug large language model reasoning directly into local environments or custom web apps.`,
+    challenge: `Integrating AI models into existing workflows requires wiring up APIs, managing context, and building UI — all from scratch, every time. There was no lightweight, drop-in bridge that made this fast.`,
+    solution: `Ai-bridge wraps the complexity behind a clean API and modular UI. Responsive, modular, and built natively in JavaScript for high accessibility and fast prototyping.`,
+    features: [
+      { icon: "🤖", title: "Model Agnostic",    desc: "Plug in any LLM via a unified interface — swap providers without rewriting application logic." },
+      { icon: "⚡", title: "Fast Prototyping",  desc: "Built in vanilla JavaScript — no heavy framework, boots instantly, integrates everywhere." },
+    ],
     stack: ["JavaScript", "Web APIs", "AI Models", "Vite"],
-    gradient: "linear-gradient(120deg, #c4d8ce, #e5e0d4, #19b08b40)"
+    architecture: ["Modular API wrapper abstracts provider differences.", "Lightweight vanilla JS UI with zero runtime dependencies."],
+    metrics: [],
+    learnings: ["Provider abstraction layers pay off when models change — and they always do."],
+    links: { github: "https://github.com/chaivala-dot/Ai-bridge" },
   },
+
   darecoins: {
-    type: "Web App / 2026",
+    type: "Web App · 2026",
     title: "DareCoins",
     sub: "Gamified Economy",
-    desc: `<p>DareCoins turns social dares into a fun, gamified digital economy.</p><p>Users can publicly challenge friends or colleagues to complete dares. Upon satisfying the proof of completion, users are rewarded with "DareCoins", which can be collected and tracked on global leaderboards.</p><p>The platform required implementing real-time state synchronization and a highly interactive, animated user interface to keep engagement very high.</p>`,
+    gradient: "linear-gradient(120deg, #d8c4c4, #e5e0d4, #b0193140)",
+    meta: [{ label: "Role", value: "Developer" }, { label: "Year", value: "2026" }],
+    overview: `DareCoins turns social dares into a fun, gamified digital economy. Users challenge each other to dares and earn DareCoins on completion — tracked on global leaderboards.`,
+    challenge: `Keeping users engaged in a dare economy requires real-time state sync, satisfying animations, and a reward loop that feels genuinely fun rather than mechanical.`,
+    solution: `Real-time state synchronisation with socket-driven updates, CSS animations for reward moments, and a leaderboard that updates live to trigger competitiveness.`,
+    features: [
+      { icon: "🎯", title: "Dare Economy",   desc: "Issue dares, accept challenges, earn DareCoins on verified completion." },
+      { icon: "🏆", title: "Leaderboard",    desc: "Real-time global ranking updates as DareCoins are earned." },
+    ],
     stack: ["JavaScript", "HTML5 Canvas", "CSS Animations", "Sockets"],
-    gradient: "linear-gradient(120deg, #d8c4c4, #e5e0d4, #b0193140)"
+    architecture: ["Socket-driven state keeps all clients in sync without polling.", "Canvas-based animations for dare completion reward moments."],
+    metrics: [],
+    learnings: ["Real-time UX lives or dies by the perceived latency — even a 50ms delay breaks the feel of 'live'."],
+    links: { github: "https://github.com/chaivala-dot/DareCoins-V-0.1" },
   },
+
   eventsphere: {
-    type: "Mobile App / 2026",
+    type: "Mobile App · 2026",
     title: "EventSphere",
     sub: "Event Discovery App",
-    desc: `<p>EventSphere is a single, unified cross-platform mobile application natively compiled for both iOS and Android via Flutter.</p><p>The app enables users to seamlessly discover local workshops, tech meetups, and creative gatherings around the world. It provides real-time maps, integrated ticketing, and robust searching mechanisms.</p><p>The UI relies heavily on beautiful imagery, smooth page transitions, and heavily optimized Dart code to maintain 60FPS scrolling across all devices.</p>`,
+    gradient: "linear-gradient(120deg, #c4c5d8, #e5e0d4, #4019b040)",
+    meta: [{ label: "Role", value: "Mobile Developer" }, { label: "Year", value: "2026" }],
+    overview: `EventSphere is a cross-platform mobile app for discovering and managing events globally. Built with Flutter for a native-feeling experience on both iOS and Android from a single codebase.`,
+    challenge: `Building a single codebase that feels truly native on both iOS and Android — with smooth animations, maps integration, and 60fps scrolling — is deceptively hard.`,
+    solution: `Flutter with heavily optimised Dart code, real-time maps via Google Maps API, integrated ticketing, and smooth page transitions that respect each platform's motion conventions.`,
+    features: [
+      { icon: "🗺️", title: "Real-time Maps",   desc: "Discover nearby events on an interactive Google Maps integration." },
+      { icon: "📱", title: "Cross-platform",    desc: "Single Dart codebase compiled natively for iOS and Android." },
+    ],
     stack: ["Flutter", "Dart", "Firebase", "Google Maps API"],
-    gradient: "linear-gradient(120deg, #c4c5d8, #e5e0d4, #4019b040)"
+    architecture: ["Flutter widget tree with lazy rendering for smooth 60fps list scrolling.", "Firebase real-time database for live event updates."],
+    metrics: [],
+    learnings: ["Dart's strong typing catches integration bugs early — especially useful across platform boundary code."],
+    links: { github: "https://github.com/chaivala-dot/EventSphere-App" },
   },
+
   coursemarketplace: {
-    type: "Web Platform / 2026",
+    type: "Web Platform · 2026",
     title: "Course Marketplace",
     sub: "Educational Hub",
-    desc: `<p>Course Marketplace is an architectural exploration of how to build a scalable content platform using fundamental web primitives.</p><p>By relying tightly on semantic HTML and vanilla JavaScript rather than a heavy framework, the application boots instantly and achieves a perfect 100 Lighthouse performance score.</p><p>It features a clean catalogue grid, persistent cart state, a minimal video player interface, and elegant fluid typography.</p>`,
+    gradient: "linear-gradient(120deg, #d8d0c4, #e5e0d4, #a3b01940)",
+    meta: [{ label: "Role", value: "Developer" }, { label: "Year", value: "2026" }],
+    overview: `Course Marketplace is an architectural exploration of how to build a scalable content platform using fundamental web primitives — no heavy framework, semantic HTML, and vanilla JavaScript.`,
+    challenge: `Most course platforms are over-engineered with heavy frameworks that add latency. The challenge was proving that fundamental web primitives could deliver a great experience with perfect Lighthouse scores.`,
+    solution: `Semantic HTML, CSS Grid catalogue, persistent cart via LocalStorage, minimal video player interface, and fluid typography — all with zero framework overhead.`,
+    features: [
+      { icon: "📚", title: "Course Catalogue",  desc: "CSS Grid layout with fluid typography and semantic HTML structure." },
+      { icon: "🛒", title: "Persistent Cart",   desc: "LocalStorage-backed cart state survives page refreshes without a backend." },
+    ],
     stack: ["HTML5", "Vanilla JavaScript", "CSS3 Grid", "LocalStorage"],
-    gradient: "linear-gradient(120deg, #d8d0c4, #e5e0d4, #a3b01940)"
+    architecture: ["Zero-framework approach: pure DOM APIs for all interactivity.", "LocalStorage for cart persistence with serialised JSON state."],
+    metrics: [],
+    learnings: ["Removing the framework removes the abstraction tax — sometimes that's exactly what a project needs."],
+    links: { github: "https://github.com/chaivala-dot/course-marketplace" },
   },
+
   portfolio: {
-    type: "Web / 2026",
-    title: "Portfolio Setup",
-    sub: "Creative Directory",
-    desc: `<p>This very website. Rather than using generic templates or Bootstrap, this portfolio was built entirely from scratch to enforce a strict editorial and print-inspired design language.</p><p>It utilizes specific constraints: no equal column grids, heavy usage of the beautiful Bodoni Moda serif, and a physics-based interactive 'messy desk' hero element that forces the user to engage with the DOM.</p><p>A personal playground for exploring anti-generic UI theory.</p>`,
+    type: "Web · 2026",
+    title: "Portfolio v3",
+    sub: "Editorial Personal Site",
+    gradient: "linear-gradient(120deg, #d8c4d5, #e5e0d4, #a119b040)",
+    meta: [{ label: "Role", value: "Designer + Developer" }, { label: "Year", value: "2026" }],
+    overview: `This very site. Built entirely from scratch to enforce a strict editorial and print-inspired design language — no generic templates, no Bootstrap, no equal column grids.`,
+    challenge: `Most developer portfolios look identical — centered cards, Inter font, purple gradients. The challenge was designing something that felt genuinely different without being illegible.`,
+    solution: `Heavy usage of Bodoni Moda serif, asymmetric hero, physics-based 'messy desk' element with draggable photos, anti-generic layout rules, and Intersection Observer-driven scroll reveals.`,
+    features: [
+      { icon: "🖼️", title: "Messy Desk Hero",  desc: "Draggable scattered photos with CSS parallax depth — each photo has its own parallax depth variable." },
+      { icon: "🐱", title: "Pretext Cat",       desc: "Text wraps around the Oneko cat in real time using a custom canvas-based layout engine." },
+    ],
     stack: ["DOM Physics", "Vanilla CSS", "Intersection Observer API", "HTML5"],
-    gradient: "linear-gradient(120deg, #d8c4d5, #e5e0d4, #a119b040)"
-  }
+    architecture: ["CSS custom properties drive parallax depth per element — no JS in the hot render path.", "Pretext canvas layout engine re-flows text around the animated DOM cat in real time."],
+    metrics: [],
+    learnings: ["Anti-generic design constraints force creativity — restrictions are a feature, not a limitation."],
+    links: { github: "https://github.com/chaivala-dot/portfolio" },
+  },
 };
 
-const overlay = document.getElementById('projectOverlay');
-const btnClose = document.getElementById('btnCloseOverlay');
-
-const ovType = document.getElementById('ovType');
-const ovTitle = document.getElementById('ovTitle');
-const ovSub = document.getElementById('ovSub');
-const ovDesc = document.getElementById('ovDesc');
-const ovStack = document.getElementById('ovStack');
-const ovGithub = document.getElementById('ovGithub');
-const ovGradientBg = document.querySelector('.ov-abstract-gradient');
+// ── DOM refs ──
+const overlay       = document.getElementById('projectOverlay');
+const btnClose      = document.getElementById('btnCloseOverlay');
+const ovType        = document.getElementById('ovType');
+const ovTitle       = document.getElementById('ovTitle');
+const ovSub         = document.getElementById('ovSub');
+const ovDesc        = document.getElementById('ovDesc');
+const ovMeta        = document.getElementById('ovMeta');
+const ovChallenge   = document.getElementById('ovChallenge');
+const ovSolution    = document.getElementById('ovSolution');
+const ovFeatures    = document.getElementById('ovFeatures');
+const ovStack       = document.getElementById('ovStack');
+const ovArch        = document.getElementById('ovArch');
+const ovLearn       = document.getElementById('ovLearn');
+const ovMetrics     = document.getElementById('ovMetrics');
+const ovLinks       = document.getElementById('ovLinks');
+const ovCSWrap      = document.getElementById('ovCSWrap');
+const ovFeaturesWrap= document.getElementById('ovFeaturesWrap');
+const ovArchWrap    = document.getElementById('ovArchWrap');
+const ovLearnWrap   = document.getElementById('ovLearnWrap');
+const ovMetricsWrap = document.getElementById('ovMetricsWrap');
+const ovGradientBg  = document.querySelector('.ov-abstract-gradient');
 
 // Attach listeners to all "View Case Study" buttons
 document.querySelectorAll('.open-case').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+  btn.addEventListener('click', () => {
     const id = btn.getAttribute('data-id');
-    const ghLink = btn.getAttribute('data-github');
-    const p = projectData[id];
-    
-    if (p) {
-      ovType.textContent = p.type;
-      ovTitle.textContent = p.title;
-      ovSub.textContent = p.sub;
-      ovDesc.innerHTML = p.desc;
-      
-      // Build stack list
-      ovStack.innerHTML = p.stack.map(s => `<div class="ov-stack-item">${s}</div>`).join('');
-      
-      ovGithub.href = ghLink;
-      ovGradientBg.style.background = p.gradient;
-      
-      // Open overlay and prevent page scroll
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+    const p  = projectData[id];
+    if (!p) return;
+
+    // Header
+    ovType.textContent  = p.type;
+    ovTitle.textContent = p.title;
+    ovSub.textContent   = p.sub;
+
+    // Gradient
+    ovGradientBg.style.background = p.gradient;
+
+    // Meta row
+    ovMeta.innerHTML = (p.meta || []).map(m =>
+      `<div class="ov-meta-cell"><span class="ov-meta-label mono">${m.label}</span><span class="ov-meta-val">${m.value}</span></div>`
+    ).join('');
+
+    // Overview
+    ovDesc.innerHTML = `<p>${p.overview}</p>`;
+
+    // Challenge / Solution
+    const hasCS = p.challenge && p.solution;
+    ovCSWrap.style.display = hasCS ? '' : 'none';
+    if (hasCS) {
+      ovChallenge.innerHTML = `<p>${p.challenge}</p>`;
+      ovSolution.innerHTML  = `<p>${p.solution}</p>`;
     }
+
+    // Features
+    const hasFeat = p.features && p.features.length;
+    ovFeaturesWrap.style.display = hasFeat ? '' : 'none';
+    if (hasFeat) {
+      ovFeatures.innerHTML = p.features.map(f =>
+        `<div class="ov-feat-card"><div class="ov-feat-icon">${f.icon}</div><div class="ov-feat-title mono">${f.title}</div><div class="ov-feat-desc">${f.desc}</div></div>`
+      ).join('');
+    }
+
+    // Stack
+    ovStack.innerHTML = p.stack.map(s => `<div class="ov-stack-item">${s}</div>`).join('');
+
+    // Architecture
+    const hasArch = p.architecture && p.architecture.length;
+    ovArchWrap.style.display = hasArch ? '' : 'none';
+    if (hasArch) {
+      ovArch.innerHTML = p.architecture.map((pt, i) =>
+        `<div class="ov-arch-step"><span class="ov-arch-num mono">${String(i+1).padStart(2,'0')}</span><p>${pt}</p></div>`
+      ).join('');
+    }
+
+    // Learnings
+    const hasLearn = p.learnings && p.learnings.length;
+    ovLearnWrap.style.display = hasLearn ? '' : 'none';
+    if (hasLearn) {
+      ovLearn.innerHTML = p.learnings.map((l, i) =>
+        `<div class="ov-learn-item"><span class="ov-learn-num mono">${String(i+1).padStart(2,'0')}</span><p>${l}</p></div>`
+      ).join('');
+    }
+
+    // Metrics
+    const hasMetrics = p.metrics && p.metrics.length;
+    ovMetricsWrap.style.display = hasMetrics ? '' : 'none';
+    if (hasMetrics) {
+      ovMetrics.innerHTML = p.metrics.map(m =>
+        `<div class="ov-metric"><div class="ov-metric-val">${m.value}</div><div class="ov-metric-label mono">${m.label}</div></div>`
+      ).join('');
+    }
+
+    // Links
+    let linksHTML = '';
+    if (p.links?.live)   linksHTML += `<a href="${p.links.live}"   target="_blank" class="proj-cta mono ov-link-live">Live Demo →</a>`;
+    if (p.links?.github) linksHTML += `<a href="${p.links.github}" target="_blank" class="proj-cta mono ov-link-gh">View on GitHub →</a>`;
+    ovLinks.innerHTML = linksHTML;
+
+    // Scroll overlay back to top, then open
+    overlay.querySelector('.overlay-content').scrollTop = 0;
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   });
 });
 
@@ -407,10 +573,8 @@ if (btnClose) {
     document.body.style.overflow = '';
   });
 }
-
-// Close on background click
 if (overlay) {
-  overlay.addEventListener('click', (e) => {
+  overlay.addEventListener('click', e => {
     if (e.target.classList.contains('overlay-bg')) {
       overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
@@ -421,17 +585,12 @@ if (overlay) {
 // ── CUSTOM CURSOR ──────────────────────────────────────────
 const cursorEl = document.getElementById('customCursor');
 if (cursorEl) {
-  // Move cursor
   document.addEventListener('mousemove', e => {
     cursorEl.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
   });
-
-  // Hover states
   document.querySelectorAll('a, button, .cb-group label').forEach(el => {
     el.addEventListener('mouseenter', () => cursorEl.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursorEl.classList.remove('hover'));
   });
 }
-
-
 
