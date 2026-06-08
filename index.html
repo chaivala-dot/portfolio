@@ -14,9 +14,24 @@
   <meta property="og:url" content="https://chaivala-dot.github.io/portfolio">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat:wght@700&family=Outfit:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom/dist/svg-pan-zoom.min.js"></script>
+  <script>
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Inter',
+        primaryColor: '#F5F5F5',
+        primaryTextColor: '#18140A',
+        primaryBorderColor: '#B07219',
+        lineColor: '#18140A',
+        secondaryColor: '#B07219',
+        tertiaryColor: '#fff'
+      }
+    });
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -184,6 +199,20 @@
         <article class="proj reveal" data-delay="120">
           <div class="proj-left">
             <span class="proj-index mono">03</span>
+            <span class="proj-type mono">Mobile App · 2026</span>
+          </div>
+          <div class="proj-right">
+            <h3 class="proj-title">SnapSolve</h3>
+            <p class="proj-sub mono">AI Math & Text Solver</p>
+            <p class="proj-desc">A high-performance mobile application that captures text via camera, extracts it locally with Google ML Kit, and uses the Groq API (LLaMA-3) for instant step-by-step problem-solving.</p>
+            <div class="proj-stack mono">Flutter &nbsp;/&nbsp; Edge ML &nbsp;/&nbsp; Riverpod</div>
+            <button class="proj-cta mono open-case" data-id="snapsolve" data-github="#">View Case Study →</button>
+          </div>
+        </article>
+
+        <article class="proj reveal" data-delay="180">
+          <div class="proj-left">
+            <span class="proj-index mono">04</span>
             <span class="proj-type mono">Web App · 2026</span>
           </div>
           <div class="proj-right">
@@ -195,9 +224,9 @@
           </div>
         </article>
 
-        <article class="proj reveal" data-delay="180">
+        <article class="proj reveal" data-delay="240">
           <div class="proj-left">
-            <span class="proj-index mono">04</span>
+            <span class="proj-index mono">05</span>
             <span class="proj-type mono">Mobile App · 2026</span>
           </div>
           <div class="proj-right">
@@ -209,31 +238,31 @@
           </div>
         </article>
 
-        <article class="proj reveal" data-delay="240">
+        <article class="proj reveal" data-delay="300">
           <div class="proj-left">
-            <span class="proj-index mono">05</span>
+            <span class="proj-index mono">06</span>
             <span class="proj-type mono">Web Platform · 2026</span>
           </div>
           <div class="proj-right">
             <h3 class="proj-title">Course Marketplace</h3>
             <p class="proj-sub mono">Educational Hub</p>
             <p class="proj-desc">An online marketplace for buying and selling educational courses. Features a clean, accessible UI and structured content architecture.</p>
-            <div class="proj-stack mono">HTML &nbsp;/&nbsp; CSS &nbsp;/&nbsp; JavaScript</div>
+            <div class="proj-stack mono">React &nbsp;/&nbsp; Node &nbsp;/&nbsp; Supabase</div>
             <button class="proj-cta mono open-case" data-id="coursemarketplace" data-github="https://github.com/chaivala-dot/course-marketplace">View Case Study →</button>
           </div>
         </article>
 
-        <article class="proj reveal" data-delay="300">
+        <article class="proj reveal" data-delay="360">
           <div class="proj-left">
-            <span class="proj-index mono">06</span>
-            <span class="proj-type mono">Web · 2026</span>
+            <span class="proj-index mono">07</span>
+            <span class="proj-type mono">Web App · 2026</span>
           </div>
           <div class="proj-right">
-            <h3 class="proj-title">Portfolio Setup</h3>
-            <p class="proj-sub mono">Creative Directory</p>
-            <p class="proj-desc">The foundation for a highly interactive, editorial-style personal website to showcase projects, experience, and development ethos.</p>
-            <div class="proj-stack mono">TypeScript &nbsp;/&nbsp; Frontend</div>
-            <button class="proj-cta mono open-case" data-id="portfolio" data-github="https://github.com/chaivala-dot/portfolio">View Case Study →</button>
+            <h3 class="proj-title">Cosmos Mind</h3>
+            <p class="proj-sub mono">Knowledge Graph</p>
+            <p class="proj-desc">A self-hosted bookmark manager that replaces folder hierarchies with a living, physics-simulated interactive knowledge graph.</p>
+            <div class="proj-stack mono">React &nbsp;/&nbsp; D3 &nbsp;/&nbsp; SQLite</div>
+            <button class="proj-cta mono open-case" data-id="cosmosmind" data-github="#">View Case Study →</button>
           </div>
         </article>
 
@@ -432,9 +461,10 @@
           <p class="ov-sub mono" id="ovSub">Project Subtitle</p>
         </header>
 
-        <!-- Hero gradient -->
+        <!-- Hero image/gradient -->
         <div class="ov-hero-img">
           <div class="ov-abstract-gradient"></div>
+          <img id="ovImage" src="" alt="Project Image" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
         </div>
 
         <!-- Meta row: role / year / duration / client -->
@@ -458,13 +488,24 @@
           </div>
         </section>
 
+        <!-- Workflow / Gallery -->
+        <section class="ov-section" id="ovWorkflowWrap">
+          <h3 class="ov-label mono">Workflow & Previews</h3>
+          <div class="ov-gallery-grid" id="ovGallery"></div>
+        </section>
+
         <!-- Key features grid -->
         <section class="ov-section" id="ovFeaturesWrap">
           <h3 class="ov-label mono">Key Features</h3>
           <div class="ov-features-grid" id="ovFeatures"></div>
         </section>
 
-        <!-- Stack breakdown + Architecture -->
+        <!-- Diagrams -->
+        <section class="ov-section" id="ovDiagramsWrap" style="display:none;">
+          <div id="ovDiagramsContainer"></div>
+        </section>
+
+        <!-- System Architecture -->
         <div class="ov-body-grid">
           <div class="ov-col-main">
 

@@ -34,11 +34,11 @@
   --t-paper-m: rgba(237,234,222,0.85);
   --t-paper-d: rgba(237,234,222,0.55);
 
-  /* Type scale */
-  --f-sign:    'Caveat', cursive;
-  --f-disp:    'Bodoni Moda', serif;          /* High-contrast aesthetic serif */
-  --f-body:    'Bodoni Moda', serif;       /* Aesthetic for whole site */
-  --f-mono:    'Bodoni Moda', serif;
+  /* Type scale - Modern minimal */
+  --f-sign:    'Outfit', sans-serif;
+  --f-disp:    'Outfit', sans-serif;
+  --f-body:    'Inter', sans-serif;
+  --f-mono:    'Space Mono', monospace;
 
   --ease:      cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -317,7 +317,7 @@ body.desk-clean .s-martens img { width: 130px; }
 
 .hero-tagline {
   font-family: var(--f-disp); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  color: rgba(24,20,10,0.8); font-weight: 300; font-style: italic;
+  color: rgba(24,20,10,0.8); font-weight: 500;
   line-height: 1.12; margin-bottom: 2rem;
   font-feature-settings: "ss01";
   text-wrap: balance;
@@ -426,7 +426,7 @@ body.desk-clean .s-martens img { width: 130px; }
 }
 .page-headline {
   font-family: var(--f-disp); font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  color: var(--t-ink); font-weight: 300; font-style: italic;
+  color: var(--t-ink); font-weight: 500;
   line-height: 1.1; margin-bottom: 2.5rem;
   font-feature-settings: "ss01";
   text-wrap: balance;
@@ -475,7 +475,7 @@ body.desk-clean .s-martens img { width: 130px; }
   display: inline-flex; gap: 2.5rem; white-space: nowrap;
   animation: tickerScroll 32s linear infinite;
 }
-.ti { font-family: var(--f-disp); font-style: italic; font-size: .85rem; color: var(--paper); opacity: .85; }
+.ti { font-family: var(--f-disp); font-size: .85rem; color: var(--paper); opacity: .85; }
 .ts { color: var(--gold-l); font-size: .5rem; opacity: .6; align-self: center; }
 @keyframes tickerScroll { to { transform: translateX(-50%); } }
 
@@ -495,9 +495,9 @@ body.desk-clean .s-martens img { width: 130px; }
 }
 .section-head { margin-bottom: 4rem; }
 .section-title {
-  font-family: var(--f-disp); font-style: italic;
+  font-family: var(--f-disp);
   font-size: clamp(2.2rem, 4vw, 3rem);
-  color: var(--t-ink); font-weight: 300; line-height: 1.1;
+  color: var(--t-ink); font-weight: 500; line-height: 1.1;
   font-feature-settings: "ss01";
   text-wrap: balance;
 }
@@ -538,9 +538,9 @@ body.desk-clean .s-martens img { width: 130px; }
 .proj-type { font-size: .58rem; color: var(--t-muted); letter-spacing: .04em; line-height: 1.6; }
 
 .proj-title {
-  font-family: var(--f-disp); font-style: italic;
+  font-family: var(--f-disp);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: var(--t-ink); font-weight: 300; line-height: 1.1;
+  color: var(--t-ink); font-weight: 500; line-height: 1.1;
   margin-bottom: .4rem;
   font-feature-settings: "ss01";
   text-wrap: balance;
@@ -571,9 +571,9 @@ body.desk-clean .s-martens img { width: 130px; }
 .exp-when { font-size: .6rem; color: var(--t-paper-d); letter-spacing: .06em; padding-top: .28rem; }
 
 .exp-title {
-  font-family: var(--f-disp); font-style: italic;
+  font-family: var(--f-disp);
   font-size: 1.15rem; color: var(--t-paper);
-  font-weight: 300; margin-bottom: .3rem;
+  font-weight: 500; margin-bottom: .3rem;
   font-feature-settings: "ss01";
 }
 .exp-org { font-size: .6rem; color: var(--t-paper-d); margin-bottom: .7rem; }
@@ -642,7 +642,7 @@ body.desk-clean .s-martens img { width: 130px; }
 .about-title {
   font-family: var(--f-disp);
   font-size: clamp(2rem, 3.8vw, 2.8rem);
-  color: var(--t-paper); font-weight: 300; font-style: italic;
+  color: var(--t-paper); font-weight: 500;
   line-height: 1.2; margin: 1rem 0 1.6rem;
   font-feature-settings: "ss01";
   text-wrap: balance;
@@ -657,7 +657,7 @@ body.desk-clean .s-martens img { width: 130px; }
 }
 .beliefs .belief:last-child { border-bottom: 1px solid rgba(237,234,222,.06); }
 .b-num { font-size: .58rem; color: rgba(176,114,25,.6); min-width: 18px; }
-.b-line { font-family: var(--f-disp); font-style: italic; font-size: .98rem; color: var(--t-paper-m); font-weight: 300; font-feature-settings: "ss01"; }
+.b-line { font-family: var(--f-disp); font-size: .98rem; color: var(--t-paper-m); font-weight: 500; font-feature-settings: "ss01"; }
 
 /* ══════════════════════════════════
    CONTACT
@@ -666,7 +666,7 @@ body.desk-clean .s-martens img { width: 130px; }
 .contact-heading {
   font-family: var(--f-disp);
   font-size: clamp(3rem, 6vw, 5rem);
-  color: var(--t-ink); font-weight: 300; font-style: italic;
+  color: var(--t-ink); font-weight: 500;
   line-height: 1.0; margin: 1rem 0 1.4rem;
   font-feature-settings: "ss01";
   text-wrap: balance;
@@ -875,6 +875,31 @@ body.desk-clean .s-martens img { width: 130px; }
   background: rgba(176, 114, 25, 0.04);
   border: 1px solid rgba(176, 114, 25, 0.2);
   box-shadow: 0 0 20px rgba(176, 114, 25, 0.04);
+}
+
+/* ── WORKFLOW / GALLERY ── */
+.ov-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.ov-gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.ov-gallery-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(24,20,10,0.05);
+  object-fit: cover;
+}
+.ov-gallery-caption {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  color: var(--t-muted);
+  text-align: center;
 }
 
 /* ── KEY FEATURES GRID ── */
